@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 604" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f1419"/><stop offset="1" stop-color="#1a1d2e"/></linearGradient>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#ff6a2b"/></marker>
+<marker id="g" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8b95a7"/></marker>
+</defs>
+<rect width="1280" height="604" fill="url(#bg)"/>
+<text x="45" y="52" fill="#f3f5f8" font-size="26" font-weight="700">Reddit Clone · service topology</text>
+<text x="45" y="78" fill="#8b95a7" font-size="14">Five Spring Boot services, a database per service, Redis for presence, one nginx gateway in front of the React SPA</text>
+<rect x="45" y="190" width="190" height="100" rx="10" fill="#232838" stroke="#4c8dff" stroke-width="1.5"/>
+<text x="140.0" y="220" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">user-service</text>
+<text x="140.0" y="242" text-anchor="middle" fill="#cbd2de" font-size="12.5">accounts · JWT issuing</text>
+<text x="140.0" y="266" text-anchor="middle" fill="#8b95a7" font-size="11.5">userdb · :8081</text>
+<rect x="295" y="190" width="190" height="100" rx="10" fill="#232838" stroke="#4c8dff" stroke-width="1.5"/>
+<text x="390.0" y="220" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">mod-mail-service</text>
+<text x="390.0" y="242" text-anchor="middle" fill="#cbd2de" font-size="12.5">modmail threads · DMs</text>
+<text x="390.0" y="266" text-anchor="middle" fill="#8b95a7" font-size="11.5">modmaildb · :8085</text>
+<rect x="545" y="190" width="190" height="100" rx="10" fill="#232838" stroke="#4c8dff" stroke-width="1.5"/>
+<text x="640.0" y="220" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">subreddit-service</text>
+<text x="640.0" y="242" text-anchor="middle" fill="#cbd2de" font-size="12.5">communities · roles · bans</text>
+<text x="640.0" y="266" text-anchor="middle" fill="#8b95a7" font-size="11.5">subredditdb + Redis · :8082</text>
+<rect x="795" y="190" width="190" height="100" rx="10" fill="#232838" stroke="#4c8dff" stroke-width="1.5"/>
+<text x="890.0" y="220" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">content-service</text>
+<text x="890.0" y="242" text-anchor="middle" fill="#cbd2de" font-size="12.5">posts · comments · votes</text>
+<text x="890.0" y="266" text-anchor="middle" fill="#8b95a7" font-size="11.5">contentdb · :8083</text>
+<rect x="1045" y="190" width="190" height="100" rx="10" fill="#232838" stroke="#ff6a2b" stroke-width="1.5"/>
+<text x="1140.0" y="220" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">moderation-service</text>
+<text x="1140.0" y="242" text-anchor="middle" fill="#cbd2de" font-size="12.5">AutoMod · queue · mod log</text>
+<text x="1140.0" y="266" text-anchor="middle" fill="#8b95a7" font-size="11.5">moddb · :8084</text>
+<line x1="293" y1="240" x2="238" y2="240" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="487" y1="225" x2="542" y2="225" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="543" y1="255" x2="488" y2="255" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="793" y1="240" x2="738" y2="240" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="987" y1="225" x2="1042" y2="225" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<line x1="1043" y1="255" x2="988" y2="255" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M1100.0 190 L1100.0 125 L680.0 125 L680.0 188" fill="none" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<path d="M850.0 190 L850.0 155 L430.0 155 L430.0 188" fill="none" stroke="#ff6a2b" stroke-width="1.8" marker-end="url(#a)"/>
+<rect x="45" y="385" width="1190" height="56" rx="10" fill="#232838" stroke="#ff6a2b" stroke-width="1.5"/>
+<text x="640" y="410" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">React SPA (Vite · Tailwind) served by nginx</text>
+<text x="640" y="430" text-anchor="middle" fill="#8b95a7" font-size="12.5">/api/* reverse-proxied by path to the owning service · browser talks only to this origin</text>
+<line x1="140.0" y1="385" x2="140.0" y2="293" stroke="#8b95a7" stroke-width="1.5" marker-end="url(#g)"/>
+<line x1="390.0" y1="385" x2="390.0" y2="293" stroke="#8b95a7" stroke-width="1.5" marker-end="url(#g)"/>
+<line x1="640.0" y1="385" x2="640.0" y2="293" stroke="#8b95a7" stroke-width="1.5" marker-end="url(#g)"/>
+<line x1="890.0" y1="385" x2="890.0" y2="293" stroke="#8b95a7" stroke-width="1.5" marker-end="url(#g)"/>
+<line x1="1140.0" y1="385" x2="1140.0" y2="293" stroke="#8b95a7" stroke-width="1.5" marker-end="url(#g)"/>
+<g font-size="13" fill="#cbd2de">
+<text x="45" y="478" font-weight="700" fill="#ff8a50">content → subreddit</text><text x="285" y="478">membership, ban and archived-state checks before a post or comment is accepted</text>
+<text x="45" y="498" font-weight="700" fill="#ff8a50">content → moderation</text><text x="285" y="498">AutoMod rule evaluation on new posts, comments and reports</text>
+<text x="45" y="518" font-weight="700" fill="#ff8a50">moderation → content</text><text x="285" y="518">lock · unlock · pin · remove · approve applied to posts and comments</text>
+<text x="45" y="538" font-weight="700" fill="#ff8a50">moderation → subreddit</text><text x="285" y="538">moderator authorisation for queue, log and rule endpoints</text>
+<text x="45" y="558" font-weight="700" fill="#ff8a50">modmail → user / subreddit</text><text x="285" y="558">recipient lookup and membership validation</text>
+<text x="45" y="578" font-weight="700" fill="#ff8a50">content / subreddit → modmail</text><text x="285" y="578">AutoMod notices and moderator-application threads</text></g></svg>
