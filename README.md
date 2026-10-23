@@ -101,9 +101,8 @@ Built by a team of BUET students between March and April 2026.
 - **usaben**: report-based AutoMod rules, comment reports, auto-flag filtering, AutoMod logs and history
 - **RedWine356**: reporting fixes, nginx and CORS configuration for deployment, CI/CD pipeline
 - **Tasnimul Islam Mahi** (also committing as Mahi2105013): AutoMod action logs, rule edit history, AutoMod on comments, moderator comment removal
-- **Shahraz Hussain Siyam**: initial UI scaffold
 - **Phoenix**: refactor of modmail into general user-to-user messaging
-- **Morningstaaar36** (me): see below
+- **Morningstaaar36** (me, Shahraz Hussain Siyam): initial UI scaffold (committed as "Your Name" on my behalf), plus the work below
 
 ## My contributions
 
