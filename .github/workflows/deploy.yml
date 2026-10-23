@@ -1,27 +1,23 @@
-name: Deploy to Azure VM
+name: Deploy to VM
 
+# Manual trigger; set DEPLOY_HOST, DEPLOY_USER and SSH_PRIVATE_KEY in repository secrets.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploy to Azure VM
+      - name: Deploy over SSH
         uses: appleboy/ssh-action@v1.2.0
         with:
-          host: 4.193.177.148
-          username: azureuser
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd Reddit-Clone
             git pull origin main
-            # 1. Stop and remove existing containers/networks
             docker compose down
-            # 2. Build from scratch ignoring cache and start up
             docker compose build --no-cache
             docker compose up -d
-            # 3. Optional: Remove unused images to save disk space
             docker image prune -f
