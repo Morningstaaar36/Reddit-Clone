@@ -17,8 +17,12 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
 
-    // Using a hardcoded key so both user-service and subreddit-service share the same secret
-    private final Key key = Keys.hmacShaKeyFor("404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970".getBytes());
+    private final Key key;
+
+    // All services must share the same secret; override with JWT_SECRET outside local development
+    public JwtUtil(@Value("${jwt.secret:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}") String secret) {
+        this.key = Keys.hmacShaKeyFor(secret.getBytes());
+    }
 
     @Value("${jwt.expiration:86400000}")
     private long jwtExpirationInMs;
